@@ -29,7 +29,7 @@ public class StudentH2Service implements StudentRepository {
         try {
             return db.queryForObject("SELECT * FROM STUDENT WHERE studentId = ?", new StudentRowMapper(), studentId);
         } catch (Exception e) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Student not found");
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }
     }
 
